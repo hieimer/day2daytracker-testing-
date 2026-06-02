@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Day2Day</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Main menu">
+        <div class="brand-row">
+          <div class="brand-lockup">
+            <div class="brand-mark" aria-hidden="true">D</div>
+            <span class="brand-name">Day2Day</span>
+          </div>
+          <button class="icon-button sidebar-toggle" id="sidebarToggle" type="button" aria-label="Toggle menu" aria-expanded="true">
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Day2Day views">
+          <button class="nav-item active" type="button" data-view="tasks" aria-current="page">
+            <span aria-hidden="true">□</span>
+            <span>My List</span>
+            <span class="nav-count" id="sidebarTaskCount" aria-label="0 tasks">0</span>
+          </button>
+          <button class="nav-item" type="button" data-view="completed">
+            <span aria-hidden="true">✓</span>
+            <span>Completed</span>
+            <span class="nav-count" id="sidebarCompletedCount" aria-label="0 completed tasks">0</span>
+          </button>
+        </nav>
+      </aside>
+
+      <div class="page">
+        <header class="topbar">
+          <div>
+            <h1>Day2Day</h1>
+          </div>
+        </header>
+
+        <main class="main-content">
+          <section class="task-panel" aria-labelledby="taskHeading">
+            <div class="task-header">
+              <div>
+                <h2 id="taskHeading">My List</h2>
+              </div>
+            </div>
+
+            <div class="empty-state" id="emptyState">
+              <button class="primary-button add-task-button" id="emptyAddButton" type="button">
+                <span aria-hidden="true">+</span>
+                <span>Add Task</span>
+              </button>
+            </div>
+
+            <ul class="task-list" id="taskList" aria-label="Task list"></ul>
+
+            <div class="add-row" id="addPrompt">
+              <button class="add-prompt" id="showAddForm" type="button">+ Add Task</button>
+            </div>
+
+            <form class="task-card-form hidden" id="addForm">
+              <button class="cancel-button" id="cancelAddTask" type="button" aria-label="Cancel new task">×</button>
+              <div class="form-fields">
+                <label class="sr-only" for="taskTitleInput">Task title</label>
+                <input id="taskTitleInput" type="text" placeholder="Task title" autocomplete="off" />
+
+                <label class="sr-only" for="taskDescriptionInput">Task description</label>
+                <textarea id="taskDescriptionInput" rows="1" placeholder="Task description"></textarea>
+
+                <label class="date-field" id="dateField" for="taskDueDateInput">
+                  <span aria-hidden="true">□</span>
+                  <span class="date-value" id="dueDateText">Due Date</span>
+                  <input id="taskDueDateInput" type="date" aria-label="Due date" />
+                </label>
+              </div>
+              <div class="form-actions">
+                <button class="primary-button create-task-button" type="submit">Create Task</button>
+              </div>
+            </form>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
